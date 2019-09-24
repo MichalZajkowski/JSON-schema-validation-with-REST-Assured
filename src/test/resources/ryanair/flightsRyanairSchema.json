@@ -1,0 +1,473 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.ryanair.comn",
+  "type": "object",
+  "title": "Schema",
+  "required": [
+    "termsOfUse",
+    "currency",
+    "currPrecision",
+    "trips",
+    "serverTimeUTC"
+  ],
+  "properties": {
+    "termsOfUse": {
+      "$id": "#/properties/termsOfUse",
+      "type": "string",
+      "title": "The Termsofuse Schema",
+      "default": "",
+      "examples": [
+        "https://www.ryanair.com/ie/en/corporate/terms-of-use=AGREED"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "currency": {
+      "$id": "#/properties/currency",
+      "type": "string",
+      "title": "The Currency Schema",
+      "default": "",
+      "examples": [
+        "PLN"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "currPrecision": {
+      "$id": "#/properties/currPrecision",
+      "type": "integer",
+      "title": "The Currprecision Schema",
+      "default": 0,
+      "examples": [
+        2
+      ]
+    },
+    "trips": {
+      "$id": "#/properties/trips",
+      "type": "array",
+      "title": "The Trips Schema",
+      "items": {
+        "$id": "#/properties/trips/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "origin",
+          "originName",
+          "destination",
+          "destinationName",
+          "dates"
+        ],
+        "properties": {
+          "origin": {
+            "$id": "#/properties/trips/items/properties/origin",
+            "type": "string",
+            "title": "The Origin Schema",
+            "default": "",
+            "examples": [
+              "KTW"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "originName": {
+            "$id": "#/properties/trips/items/properties/originName",
+            "type": "string",
+            "title": "The Originname Schema",
+            "default": "",
+            "examples": [
+              "Katowice"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "destination": {
+            "$id": "#/properties/trips/items/properties/destination",
+            "type": "string",
+            "title": "The Destination Schema",
+            "default": "",
+            "examples": [
+              "STN"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "destinationName": {
+            "$id": "#/properties/trips/items/properties/destinationName",
+            "type": "string",
+            "title": "The Destinationname Schema",
+            "default": "",
+            "examples": [
+              "Londyn (Stansted)"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "dates": {
+            "$id": "#/properties/trips/items/properties/dates",
+            "type": "array",
+            "title": "The Dates Schema",
+            "items": {
+              "$id": "#/properties/trips/items/properties/dates/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "dateOut",
+                "flights"
+              ],
+              "properties": {
+                "dateOut": {
+                  "$id": "#/properties/trips/items/properties/dates/items/properties/dateOut",
+                  "type": "string",
+                  "title": "The Dateout Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-09-21T00:00:00.000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "flights": {
+                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights",
+                  "type": "array",
+                  "title": "The Flights Schema",
+                  "items": {
+                    "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "faresLeft",
+                      "flightKey",
+                      "infantsLeft",
+                      "regularFare",
+                      "operatedBy",
+                      "segments",
+                      "flightNumber",
+                      "time",
+                      "timeUTC",
+                      "duration"
+                    ],
+                    "properties": {
+                      "faresLeft": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/faresLeft",
+                        "type": "integer",
+                        "title": "The Faresleft Schema",
+                        "default": 0,
+                        "examples": [
+                          -1
+                        ]
+                      },
+                      "flightKey": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/flightKey",
+                        "type": "string",
+                        "title": "The Flightkey Schema",
+                        "default": "",
+                        "examples": [
+                          "FR~8267~ ~~KTW~09/21/2019 21:10~STN~09/21/2019 22:30~~"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "infantsLeft": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/infantsLeft",
+                        "type": "integer",
+                        "title": "The Infantsleft Schema",
+                        "default": 0,
+                        "examples": [
+                          18
+                        ]
+                      },
+                      "regularFare": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare",
+                        "type": "object",
+                        "title": "The Regularfare Schema",
+                        "required": [
+                          "fareKey",
+                          "fareClass",
+                          "fares"
+                        ],
+                        "properties": {
+                          "fareKey": {
+                            "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fareKey",
+                            "type": "string",
+                            "title": "The Farekey Schema",
+                            "default": "",
+                            "examples": [
+                              "0~W~ ~FR~WLDISX2~ZZZV~~0~1~~X"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "fareClass": {
+                            "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fareClass",
+                            "type": "string",
+                            "title": "The Fareclass Schema",
+                            "default": "",
+                            "examples": [
+                              "W"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "fares": {
+                            "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares",
+                            "type": "array",
+                            "title": "The Fares Schema",
+                            "items": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items",
+                              "type": "object",
+                              "title": "The Items Schema",
+                              "required": [
+                                "type",
+                                "amount",
+                                "count",
+                                "hasDiscount",
+                                "publishedFare",
+                                "discountInPercent",
+                                "hasPromoDiscount"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/type",
+                                  "type": "string",
+                                  "title": "The Type Schema",
+                                  "default": "",
+                                  "examples": [
+                                    "ADT"
+                                  ],
+                                  "pattern": "^(.*)$"
+                                },
+                                "amount": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/amount",
+                                  "type": "number",
+                                  "title": "The Amount Schema",
+                                  "default": 0.0,
+                                  "examples": [
+                                    105.26
+                                  ]
+                                },
+                                "count": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/count",
+                                  "type": "integer",
+                                  "title": "The Count Schema",
+                                  "default": 0,
+                                  "examples": [
+                                    1
+                                  ]
+                                },
+                                "hasDiscount": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/hasDiscount",
+                                  "type": "boolean",
+                                  "title": "The Hasdiscount Schema",
+                                  "default": false,
+                                  "examples": [
+                                    true
+                                  ]
+                                },
+                                "publishedFare": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/publishedFare",
+                                  "type": "number",
+                                  "title": "The Publishedfare Schema",
+                                  "default": 0.0,
+                                  "examples": [
+                                    131.06
+                                  ]
+                                },
+                                "discountInPercent": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/discountInPercent",
+                                  "type": "integer",
+                                  "title": "The Discountinpercent Schema",
+                                  "default": 0,
+                                  "examples": [
+                                    24
+                                  ]
+                                },
+                                "hasPromoDiscount": {
+                                  "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/regularFare/properties/fares/items/properties/hasPromoDiscount",
+                                  "type": "boolean",
+                                  "title": "The Haspromodiscount Schema",
+                                  "default": false,
+                                  "examples": [
+                                    false
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "operatedBy": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/operatedBy",
+                        "type": "string",
+                        "title": "The Operatedby Schema",
+                        "default": "",
+                        "examples": [
+                          ""
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "segments": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments",
+                        "type": "array",
+                        "title": "The Segments Schema",
+                        "items": {
+                          "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items",
+                          "type": "object",
+                          "title": "The Items Schema",
+                          "required": [
+                            "segmentNr",
+                            "origin",
+                            "destination",
+                            "flightNumber",
+                            "time",
+                            "timeUTC",
+                            "duration"
+                          ],
+                          "properties": {
+                            "segmentNr": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/segmentNr",
+                              "type": "integer",
+                              "title": "The Segmentnr Schema",
+                              "default": 0,
+                              "examples": [
+                                0
+                              ]
+                            },
+                            "origin": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/origin",
+                              "type": "string",
+                              "title": "The Origin Schema",
+                              "default": "",
+                              "examples": [
+                                "KTW"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "destination": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/destination",
+                              "type": "string",
+                              "title": "The Destination Schema",
+                              "default": "",
+                              "examples": [
+                                "STN"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "flightNumber": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/flightNumber",
+                              "type": "string",
+                              "title": "The Flightnumber Schema",
+                              "default": "",
+                              "examples": [
+                                "FR 8267"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "time": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/time",
+                              "type": "array",
+                              "title": "The Time Schema",
+                              "items": {
+                                "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/time/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "default": "",
+                                "examples": [
+                                  "2019-09-21T21:10:00.000",
+                                  "2019-09-21T22:30:00.000"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            },
+                            "timeUTC": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/timeUTC",
+                              "type": "array",
+                              "title": "The Timeutc Schema",
+                              "items": {
+                                "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/timeUTC/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "default": "",
+                                "examples": [
+                                  "2019-09-21T19:10:00.000Z",
+                                  "2019-09-21T21:30:00.000Z"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            },
+                            "duration": {
+                              "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/segments/items/properties/duration",
+                              "type": "string",
+                              "title": "The Duration Schema",
+                              "default": "",
+                              "examples": [
+                                "02:20"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      },
+                      "flightNumber": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/flightNumber",
+                        "type": "string",
+                        "title": "The Flightnumber Schema",
+                        "default": "",
+                        "examples": [
+                          "FR 8267"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "time": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/time",
+                        "type": "array",
+                        "title": "The Time Schema",
+                        "items": {
+                          "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/time/items",
+                          "type": "string",
+                          "title": "The Items Schema",
+                          "default": "",
+                          "examples": [
+                            "2019-09-21T21:10:00.000",
+                            "2019-09-21T22:30:00.000"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      },
+                      "timeUTC": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/timeUTC",
+                        "type": "array",
+                        "title": "The Timeutc Schema",
+                        "items": {
+                          "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/timeUTC/items",
+                          "type": "string",
+                          "title": "The Items Schema",
+                          "default": "",
+                          "examples": [
+                            "2019-09-21T19:10:00.000Z",
+                            "2019-09-21T21:30:00.000Z"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      },
+                      "duration": {
+                        "$id": "#/properties/trips/items/properties/dates/items/properties/flights/items/properties/duration",
+                        "type": "string",
+                        "title": "The Duration Schema",
+                        "default": "",
+                        "examples": [
+                          "02:20"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "serverTimeUTC": {
+      "$id": "#/properties/serverTimeUTC",
+      "type": "string",
+      "title": "The Servertimeutc Schema",
+      "default": "",
+      "examples": [
+        "2019-07-29T15:45:44.496Z"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
