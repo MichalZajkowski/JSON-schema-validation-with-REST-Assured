@@ -14,9 +14,8 @@ class ApiJsonPlaceholderTestCases {
     void testSchemaJsonForUsersResponse_isCorrect() {
         String usersPath = "/users";
         String userId = "/2";
-
         get(baseJsonPlaceholderURL + usersPath + userId).
-        then().
+                then().
                 statusCode(200).
                 body(matchesJsonSchemaInClasspath("apiplaceholder/usersJsonPlaceholderSchema.json")).
                 body("username", Matchers.equalTo("Antonette"));
@@ -26,7 +25,6 @@ class ApiJsonPlaceholderTestCases {
     void testSchemaJsonForPostsResponse_isCorrect() {
         String postPath = "/posts";
         String userId = "/1";
-
         get(baseJsonPlaceholderURL + postPath + userId).then().
                 statusCode(200).
                 body(matchesJsonSchemaInClasspath("apiplaceholder/postsJsonPlaceholderSchema.json")).
@@ -37,7 +35,6 @@ class ApiJsonPlaceholderTestCases {
     void testSchemaJsonForCommentsResponse_isCorrect() {
         String commentPath = "/comments";
         String userId = "/1";
-
         get(baseJsonPlaceholderURL + commentPath + userId).then().
                 statusCode(200).
                 body(matchesJsonSchemaInClasspath("apiplaceholder/commentsJsonPlaceholderSchema.json")).
@@ -48,7 +45,6 @@ class ApiJsonPlaceholderTestCases {
     void testSchemaJsonForAlbumsResponse_isCorrect() {
         String albumsPath = "/albums";
         String userId = "/1";
-
         get(baseJsonPlaceholderURL + albumsPath + userId).then().
                 statusCode(200).
                 body(matchesJsonSchemaInClasspath("apiplaceholder/albumsJsonPlaceholderSchema.json")).
@@ -59,7 +55,6 @@ class ApiJsonPlaceholderTestCases {
     void testUserResponse_isIncorrect() {
         String usersPath = "/users";
         String userId = "/0";
-
         get(baseJsonPlaceholderURL + usersPath + userId).then().statusCode(404);
     }
 
@@ -67,7 +62,6 @@ class ApiJsonPlaceholderTestCases {
     void testAlbumsResponse_isIncorrect() {
         String usersPath = "/albums";
         String userId = "/0";
-
         get(baseJsonPlaceholderURL + usersPath + userId).then().statusCode(404);
     }
 
@@ -75,7 +69,6 @@ class ApiJsonPlaceholderTestCases {
     void testCommentsResponse_isIncorrect() {
         String usersPath = "/comments";
         String userId = "/0";
-
         get(baseJsonPlaceholderURL + usersPath + userId).then().statusCode(404);
     }
 
@@ -83,7 +76,6 @@ class ApiJsonPlaceholderTestCases {
     void testPostsResponse_isIncorrect() {
         String usersPath = "/posts";
         String userId = "/0";
-
         get(baseJsonPlaceholderURL + usersPath + userId).then().statusCode(404);
     }
 }
