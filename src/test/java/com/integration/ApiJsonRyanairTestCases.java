@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static com.jayway.restassured.RestAssured.*;
+import static com.jayway.restassured.RestAssured.get;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 class ApiJsonRyanairTestCases {

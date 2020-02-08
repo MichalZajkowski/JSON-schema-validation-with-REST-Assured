@@ -3,7 +3,7 @@ package com.integration;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
-import static com.jayway.restassured.RestAssured.*;
+import static com.jayway.restassured.RestAssured.get;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 class ApiJsonPlaceholderTestCases {
