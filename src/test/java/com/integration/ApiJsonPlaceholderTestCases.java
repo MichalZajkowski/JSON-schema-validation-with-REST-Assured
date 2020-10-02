@@ -8,7 +8,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 
 class ApiJsonPlaceholderTestCases {
 
-    private String baseJsonPlaceholderURL = "https://jsonplaceholder.typicode.com";
+    private final String baseJsonPlaceholderURL = "https://jsonplaceholder.typicode.com";
 
     @Test
     void testSchemaJsonForUsersResponse_isCorrect() {

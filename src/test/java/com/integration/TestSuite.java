@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 class TestSuite {
 
-    private ApiJsonRyanairTestCases apiJsonRyanairTestCases = new ApiJsonRyanairTestCases();
-    private ApiJsonPlaceholderTestCases apiJsonPlaceholderTestCases = new ApiJsonPlaceholderTestCases();
+    private final ApiJsonRyanairTestCases apiJsonRyanairTestCases = new ApiJsonRyanairTestCases();
+    private final ApiJsonPlaceholderTestCases apiJsonPlaceholderTestCases = new ApiJsonPlaceholderTestCases();
 
     @Test
     void runTestSuite() {
